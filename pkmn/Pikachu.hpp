@@ -4,21 +4,20 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
+#include "APokemon.hpp"
 
 namespace pkmn {
-class Pikachu {
+class Pikachu : public Apokemon {
 public:
-    Pikachu(const std::string &nickname);
-    const std::string &species() const;
-    const std::string &type() const;
-    const std::string &name() const;
-    const int         &health() const;
-    int               &health();
-    bool               fainted() const;
+    Pikachu(const std::string &nickname)
+        : Apokemon(nickname), species_name("Pikachu"), pokemon_type("Electric")
+    {}
+    const std::string &species() const override;
+    const std::string &type() const override;
 
 private:
-    std::string nickname_;
-    int         pkmnhealth;
+    std::string species_name;
+    std::string pokemon_type;
 };
 } // namespace pkmn
 
