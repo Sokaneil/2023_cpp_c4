@@ -27,35 +27,24 @@ int main(void)
 {
     pkmn::Pikachu    pika("Antoine");
     pkmn::Charmander charm("Daniel");
+    pkmn::Nurse      nurse;
 
     dump_pika(pika);
     pika.health() -= 10;
     dump_pika(pika);
     pika.health() -= 90;
-    std::cout << "has fainted? " << ((pika.fainted()) ? "yes" : "no")
-              << "\n";
-
+    std::cout << "has fainted? " << ((pika.fainted()) ? "yes" : "no") << "\n";
     dump_charm(charm);
     charm.health() -= 20;
     dump_charm(charm);
     charm.health() -= 80;
-    std::cout << "has fainted? " << ((charm.fainted()) ? "yes" : "no")
-              << "\n";
+    std::cout << "has fainted? " << ((charm.fainted()) ? "yes" : "no") << "\n";
+    std::cout << "After the battle" << std::endl;
+    nurse.heal(pika);
+    nurse.heal(charm);
+    std::cout << pika.name() << " is healed back to " << pika.health() << "hp\n";
+    std::cout << charm.name() << " is healed back to " << charm.health()
+              << "hp\n";
 
     return 0;
 }
-/*int main(void)
-{
-    pkmn::Apokemon charm("Antoine");
-    pkmn::Apokemon pika("Daniel");
-        pkmn::Nurse nurse;
-
-        charm.health() -= 53;
-        std::cout << charm.health() << std::endl;
-        nurse.heal(charm);
-        std::cout << pika.health() << std::endl;
-        pika.health() -= 13;
-        std::cout << pika.health() << std::endl;
-        nurse.heal(pika);
-        std::cout << pika.health() << std::endl;
-}*/
