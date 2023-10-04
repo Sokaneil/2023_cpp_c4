@@ -25,21 +25,21 @@ void dump_pika(const pkmn::Apokemon &pika)
 
 int main(void)
 {
-    pkmn::Pikachu    pikachu("Pika");
-    pkmn::Charmander charmander("Char");
+    pkmn::Pikachu    pika("Antoine");
+    pkmn::Charmander charm("Daniel");
 
-    dump_pika(pikachu);
-    pikachu.health() -= 10;
-    dump_pika(pikachu);
-    pikachu.health() -= 90;
-    std::cout << "has fainted? " << ((pikachu.fainted()) ? "yes" : "no")
+    dump_pika(pika);
+    pika.health() -= 10;
+    dump_pika(pika);
+    pika.health() -= 90;
+    std::cout << "has fainted? " << ((pika.fainted()) ? "yes" : "no")
               << "\n";
 
-    dump_charm(charmander);
-    charmander.health() -= 20;
-    dump_charm(charmander);
-    charmander.health() -= 80;
-    std::cout << "has fainted? " << ((charmander.fainted()) ? "yes" : "no")
+    dump_charm(charm);
+    charm.health() -= 20;
+    dump_charm(charm);
+    charm.health() -= 80;
+    std::cout << "has fainted? " << ((charm.fainted()) ? "yes" : "no")
               << "\n";
 
     return 0;
